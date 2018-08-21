@@ -1,0 +1,11 @@
+.bg-lightgrey {
+  background-color: #ddd;
+}
+
+.bg-grey {
+  background-color: #ccc;
+}
+
+.root {
+  min-height: 100vh;
+}

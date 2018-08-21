@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="myCtrl">
+<head>
+  <meta charset="UTF-8">
+  <title>ANGULAR - Chat client</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/stylesheet.css">
+</head>
+<body class="bg-lightgrey">
+  <div class="container bg-grey">
+    <div class="root">
+      <div class="row">
+        <div class="col-md-12">
+          <p>Статус: <span>{{chatStatus}}</span></p>
+          <p >{{loginStatus}}</p>
+          <input type="text" ng-model="userName" ng-init="userName=''" placeholder="Choose your name">
+          <input type="password" ng-model="userPassword" ng-init="userPassword=''" placeholder="Choose your password">
+          <input type="email" ng-model="userEmail" ng-init="userEmail=''" placeholder="Enter your email">
+          <input type="email" ng-model="userDisplayName" ng-init="userDisplayName=''" placeholder="Enter your display name">
+          <button class="btn btn-info" type="button" ng-click="register()">Register new user</button>
+          <br>
+          <input type="text" ng-model="userLogin" ng-init="userLogin=''" placeholder="Enter login">
+          <input type="text" ng-model="userLoginPass" ng-init="userLoginPass=''" placeholder="Enter password">
+          <button class="btn btn-success" type="button" ng-click="login()" ng-disabled="loginButtonDisabled">Login into chat</button>
+          <button class="btn btn-danger" type="button" ng-click="logout()" ng-disabled="logoutButtonDisabled">LOGOUT</button>
+          <br>
+          <p>Статус сообщения: <span>{{msgStatus}}</span></p>
+          <input type="text" ng-model="userMessage" ng-init="userMessage=''" placeholder="Enter message">
+          <button class="btn btn-warning" type="button" ng-click="sendMessage()" ng-disabled="sendButtonDisabled">Send message</button>
+          <br>
+          <div class="chat-window">
+            <p>Статус чата - <span>{{chatWindowStatus}}</span></p>
+            <ul>
+              <li ng-repeat="item in messages">id: {{item.id}}, date: {{item.date}}, fm: {{item.from}}, to: {{item.to}} | {{item.body}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script defer type="text/javascript" src="./vendor/a.js"></script>
+  <script defer type="text/javascript" src="./js/app.js"></script>
+  <script defer type="text/javascript" src="./js/controller.js"></script>
+</body>
+</html>
